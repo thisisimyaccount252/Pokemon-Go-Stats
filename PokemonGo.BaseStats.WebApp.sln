@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonGo.BaseStats.WebApp", "PokemonGo.BaseStats.WebApp\PokemonGo.BaseStats.WebApp.csproj", "{1D0E79A1-362D-4516-9520-D27B3501805A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonGo.BaseStats.Service", "PokemonGo.BaseStats.Service\PokemonGo.BaseStats.Service.csproj", "{AA1AF3B3-25F4-459A-A9C1-364BDB3BE4D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonGo.Image.Service", "PokemonGo.Image.Service\PokemonGo.Image.Service.csproj", "{305F35B3-A26F-4421-B66C-917CFD983365}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D0E79A1-362D-4516-9520-D27B3501805A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D0E79A1-362D-4516-9520-D27B3501805A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D0E79A1-362D-4516-9520-D27B3501805A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D0E79A1-362D-4516-9520-D27B3501805A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA1AF3B3-25F4-459A-A9C1-364BDB3BE4D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA1AF3B3-25F4-459A-A9C1-364BDB3BE4D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA1AF3B3-25F4-459A-A9C1-364BDB3BE4D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA1AF3B3-25F4-459A-A9C1-364BDB3BE4D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{305F35B3-A26F-4421-B66C-917CFD983365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{305F35B3-A26F-4421-B66C-917CFD983365}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{305F35B3-A26F-4421-B66C-917CFD983365}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{305F35B3-A26F-4421-B66C-917CFD983365}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6DE8D63C-0ABD-4EC1-AD25-A99534DA3B0F}
+	EndGlobalSection
+EndGlobal

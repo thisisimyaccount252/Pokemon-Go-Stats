@@ -1,0 +1,73 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+@*TODO: Eventually add search by name or by number*@
+@*TODO: after implementing searching and making sure my other search methods work, mess with Elasticsearch for searching*@
+@*And maybe start with Mongo and make an index on Mon name? They're not unique though, so we'd get multiple results?*@
+@*<div class="row col-md-12">
+    <form method="post">
+        <textbox class="col-md-3" />
+        <input type="submit" class="glyphicon-search" />
+    </form>
+</div>*@
+
+@*TODO: Very next thing, add infinite scrolling!!!!*@
+<div class="row col-md-12">
+    @for (int i = 0; i < Model.Pokemon.Count; i++)
+    {
+        
+    <div class="col-md-6">
+        <div class="col-md-5">
+            <img class="pokemon-image" src="@(string.Format(Model.ImageUrl, Model.Pokemon[i].Id.ToString("D3")))" />
+        </div>
+        <div class="col-md-7">
+            <div class="row">
+                <div class="col-md-12 panel-heading">@Model.Pokemon[i].Name</div>
+            </div>
+            <div class="row">
+                @Html.LabelFor(m => m.Pokemon[i].BaseAttack, null, new { @class = "col-md-6" })
+                <div class="col-md-6">@Model.Pokemon[i].BaseAttack</div>
+            </div>
+            <div class="row">
+                @Html.LabelFor(m => m.Pokemon[i].BaseDefense, null, new { @class = "col-md-6" })
+                <div class="col-md-6">@Model.Pokemon[i].BaseDefense</div>
+            </div>
+            <div class="row">
+                @Html.LabelFor(m => m.Pokemon[i].BaseStamina, null, new { @class = "col-md-6" })
+                <div class="col-md-6">@Model.Pokemon[i].BaseStamina</div>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+
+<script>
+    $(document).ready(function () {
+    var pageindex = 2;
+    var NoMoredata = false;
+    var inProgress = false;
+
+    $(window).on("scroll", function () {
+        var docHeight = $(document).height();
+        var winScrolled = $(window).height() + $(window).scrollTop();
+        if ((docHeight - winScrolled) < 1) {
+            console.log("module scrolled to bottom");
+            inProgress = true;
+            $("#loadingdiv").show();
+
+            $.post("@Url.Action("Scroll", "Home")", { "pageindex": pageindex },
+                function (data) {
+                    pageindex = pageindex + 1;
+                    NoMoredata = data.NoMoredata;
+                    $("#trow").append(data.HTMLString);
+                    $("#loadingdiv").hide();
+                    inProgress = false;
+                }
+            );
+        }
+    });
+})
+</script>
